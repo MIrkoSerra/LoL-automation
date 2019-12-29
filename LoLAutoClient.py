@@ -24,7 +24,7 @@ def ghostclick(imgname): #Does a invisible click
 
 def auto_accept():
     while keyboard.is_pressed('q') == False:
-        time.sleep(1)
+        time.sleep(0.1)
         print('Looking for Acceptlabel..')
         if locate('acceptlabel'):
             print('Found Accept Label!')
@@ -98,7 +98,7 @@ def startgame(firstlane,secondlane):
 
 def bann_pick(bann,champ1,champ2=None,champ3=None):
     while keyboard.is_pressed('q') == False:
-        time.sleep(1)
+        time.sleep(0.2)
         print("Search for Banning..")
         if locate('bannchamplabel'):
             print("Found Bann Label, search textbox..")
@@ -108,7 +108,7 @@ def bann_pick(bann,champ1,champ2=None,champ3=None):
                 pyautogui.write(bann)
                 pyautogui.move(-440,50)
                 pyautogui.click()           #Need to add 'Submit the bann'
-                time.sleep(1)
+                time.sleep(0.4)
                 print('Champion Selected!')
 
 
@@ -152,6 +152,6 @@ t1 = threading.Thread(target=auto_accept)
 t2 = threading.Thread(target=startgame,args=(lane1,lane2))
 t3 = threading.Thread(target=bann_pick,args=(bann,champ1,champ2))
 
-t1.start()
+#t1.start()
 #t2.start()
 t3.start()
